@@ -11,7 +11,7 @@ SELECT name
 
  -- 3. Give the name and the per capita GDP for those countries with a population of at least 200 million. 
 
- SELECT name, gdp, population
+ SELECT name, gdp/population
   FROM world
  WHERE population >= 200000000;
 
@@ -45,8 +45,14 @@ SELECT name, population, area
  FROM world
 WHERE area > 3000000 XOR population > 250000000;
 
--- For South America show population in millions and GDP in billions both to 2 decimal places.
+-- 9. For South America show population in millions and GDP in billions both to 2 decimal places.
 
 SELECT name, ROUND(population/1000000, 2), ROUND(gdp/1000000000, 2) 
  FROM world
 WHERE continent LIKE 'South America';
+
+-- 10. Show per-capita GDP for the trillion dollar countries to the nearest $1000.
+
+SELECT name, ROUND(gdp/population, -3)
+ FROM world
+WHERE gdp >= 1000000000000
