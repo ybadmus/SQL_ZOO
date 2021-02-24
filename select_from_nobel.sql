@@ -31,5 +31,12 @@ SELECT yr, subject
 
 -- 6. Show all details of the presidential winners: 
 
-SELECT * FROM nobel WHERE
-winner IN ('Theodore Roosevelt', 'Woodrow Wilson', 'Jimmy Carter', 'Barack Obama')
+SELECT * 
+ FROM nobel WHERE
+winner IN ('Theodore Roosevelt', 'Woodrow Wilson', 'Jimmy Carter', 'Barack Obama');
+
+-- 7. Show the winners with first name John 
+
+SELECT winner 
+ FROM nobel 
+WHERE winner LIKE ('John_%');
