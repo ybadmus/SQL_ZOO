@@ -62,3 +62,10 @@ WHERE gdp >= 1000000000000;
 SELECT name, capital 
  FROM world
 WHERE LENGTH(name) = LENGTH(capital);
+
+-- 12. Show the name and the capital where the first letters of each match.
+
+SELECT name, capital
+ FROM world 
+WHERE LEFT(name, 1) = LEFT(capital, 1)
+ AND name <> capital
