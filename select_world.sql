@@ -55,4 +55,10 @@ WHERE continent LIKE 'South America';
 
 SELECT name, ROUND(gdp/population, -3)
  FROM world
-WHERE gdp >= 1000000000000
+WHERE gdp >= 1000000000000;
+
+-- 11. Show the name and capital where the name and the capital have the same number of characters.
+
+SELECT name, capital 
+ FROM world
+WHERE LENGTH(name) = LENGTH(capital);
