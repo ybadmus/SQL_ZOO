@@ -40,3 +40,8 @@ winner IN ('Theodore Roosevelt', 'Woodrow Wilson', 'Jimmy Carter', 'Barack Obama
 SELECT winner 
  FROM nobel 
 WHERE winner LIKE ('John_%');
+
+-- 8. Show the year, subject, and name of Physics winners for 1980 together with the Chemistry winners for 1984.
+
+SELECT yr, subject, winner from nobel
+WHERE (subject = 'Physics' AND yr = 1980) OR (subject = 'Chemistry' AND yr = 1984)
