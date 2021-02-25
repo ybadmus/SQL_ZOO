@@ -20,7 +20,6 @@ SELECT name, continent
 WHERE continent IN (SELECT continent FROM world 
  WHERE name IN ('Argentina', 'Australia')) ORDER BY name;
 
-
 -- 4. Which country has a population that is more than Canada but less than Poland
 
 SELECT name 
@@ -28,7 +27,6 @@ SELECT name
 WHERE 
   (SELECT population FROM world WHERE name = 'Canada') > 
   (SELECT population FROM world WHERE name = 'Poland');
-
 
 -- 5. Show the name and the population of each country in Europe. Show the population as a percentage of the population of Germany.
 
@@ -41,4 +39,18 @@ WHERE continent = 'Europe';
 SELECT name
  FROM world
 WHERE gdp > 
-  ALL(SELECT gdp FROM world WHERE continent = 'Europe' AND gdp IS NOT NULL)
+  ALL(SELECT gdp FROM world WHERE continent = 'Europe' AND gdp IS NOT NULL);
+
+-- 7. Find the largest country (by area) in each continent, show the continent, the name and the area
+
+SELECT continent, name, area 
+ FROM world wor 
+WHERE area >= 
+  ALL (SELECT area FROM world worl WHERE wor.continent = worl.continent AND area > 0);
+
+-- 8. List each continent and the name of the country that comes first alphabetically.
+
+SELECT continent, name 
+ FROM world wor
+WHERE name <= 
+  ALL (SELECT name FROM world worl WHERE wor.continent = worl.continent ORDER BY name);
