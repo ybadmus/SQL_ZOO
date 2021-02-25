@@ -21,4 +21,10 @@ WHERE continent IN (SELECT continent FROM world
  WHERE name IN ('Argentina', 'Australia')) ORDER BY name;
 
 
-https://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial
+-- 4. Which country has a population that is more than Canada but less than Poland
+
+SELECT name 
+ FROM world 
+WHERE 
+  (SELECT population FROM world WHERE name = 'Canada') > 
+  (SELECT population FROM world WHERE name = 'Poland');
