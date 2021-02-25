@@ -32,6 +32,13 @@ WHERE
 
 -- 5. Show the name and the population of each country in Europe. Show the population as a percentage of the population of Germany.
 
-SELECT name, CONCAT(ROUND(population/(SELECT population FROM world WHERE name = 'Germany')*100,0), '%') AS percentage 
+SELECT name, CONCAT(ROUND(population/(SELECT population FROM world WHERE name = 'Germany')*100), '%') AS percentage 
  FROM world 
 WHERE continent = 'Europe'; 
+
+-- 6. Which countries have a GDP greater than every country in Europe
+
+SELECT name
+ FROM world
+WHERE gdp > 
+  ALL(SELECT gdp FROM world WHERE continent = 'Europe' AND gdp IS NOT NULL)
