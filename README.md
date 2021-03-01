@@ -42,7 +42,7 @@ As part of the requirements to complete the database section of the Microverse t
 
 👤 **Yusuf A. Badmus (Yusif)**
 
-- GitHub: [@janis_jenny](https://github.com/ybadmus)
+- GitHub: [@ybadmus](https://github.com/ybadmus)
 
 
 
@@ -50,7 +50,7 @@ As part of the requirements to complete the database section of the Microverse t
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/janis-jenny/SQL-ZOO-Solutions/issues).
+Feel free to check the [issues page](https://github.com/ybadmus/SQL_ZOO/issues).
 
 
 
